@@ -1,7 +1,7 @@
 # blog
 Test task for Kodland
 
-## About:
+## Tools:
 Django, HTML/CSS
 
 ## Result deployed on pythonanywhere:
