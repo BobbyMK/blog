@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Главная</title>
+{% endblock title %}
+
+{% block content %}
+	<div class="v3359_67"></div>
+	<div class="v3362_1">
+		<div class="v3359_68"></div>
+		<div class="v3359_422">
+			<div class="v3359_417">
+				<a href='{% url 'main' %}'><img src={% static "media/Logo_Kodland.png" %} alt="" /></a>
+			</div>
+			<span class="v3359_78">Блог</span>
+			<div class="name"></div>
+			<div class="v3359_134">
+				<a href='{% url 'post' %}'><span class="v3359_133">+ Добавить статью</span><a>
+			</div>
+		</div>
+	</div>
+	<div class="v3362_2">
+		{% for item in last %}
+			<div class="v3359_69">
+				<img class="pic" src="media/{{ item.image }}">
+			</div>
+			<div class="v3359_420">
+				<span class="v3359_113">{{ item.title }}</span>
+				<div class="v3359_419">
+					<a href="{% url 'read' %}?value={{ item.id }}"><span class="v3359_115">Читать</span></a>
+				</div>
+				<span class="v3359_129">NEW</span>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="v3362_0">
+		<span class="v3359_88">Другие статьи</span>
+		<div class="container-1">
+			{% for item in latest %}
+				<div class="box"
+					<p><a href="{% url 'read' %}?value={{ item.id }}"><img class="pic" src="media/{{ item.image }}"></a></p>
+					<p><a href="{% url 'read' %}?value={{ item.id }}"><span class="imaged_title">{{ item.title }}</span></a></p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Новая статья</title>
+{% endblock title %}
+
+{% block content %}
+	<div class="v3362_1">
+		<div class="v3359_68"></div>
+		<div class="v3359_422">
+			<div class="v3359_417">
+				<a href='{% url 'main' %}'><img src={% static "media/Logo_Kodland.png" %} alt="" /></a>
+			</div>
+			<span class="v3359_78">Блог</span>
+			<div class="name"></div>
+			<div class="v3359_134">
+				<a href='{% url 'post' %}'><span class="v3359_133">+ Добавить статью</span><a>
+			</div>
+		</div>
+	</div>
+	<div class="whole_page">
+		<div class="page2">
+		{% for item in article %}
+			<div class="post">
+				<h1>{{ item.title }}</h1>
+				<img class="pic2" src="../media/{{ item.image }}">
+			</div>
+			<span class="cont">{{ item.content }}</span>
+		{% endfor %}
+		</div>
+	</div>
+{% endblock content %}
