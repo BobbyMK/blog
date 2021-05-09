@@ -3,6 +3,3 @@ Test task for Kodland. Simple blog. Displays the last 10 articles on the homepag
 
 ## Tools:
 Django, HTML/CSS
-
-## Result deployed on pythonanywhere:
-http://bobbymk.pythonanywhere.com/
